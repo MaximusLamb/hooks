@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import { getCharacter } from '../services/getCharacter';
+import React from 'react';
 import CharacterList from '../components/CharacterList';
+import { useListContainer } from '../customHooks/useListContainer';
 
 
 const ListContainer = () => {
-  const [characters, setCharacters] = useState([]);
+  
+  const {
+    characters
+  } = useListContainer();
 
-  useEffect(() => {
-    getCharacter()
-      .then(characters => setCharacters(characters));
-  }, []);
   return (
     <CharacterList
       characters={characters}
