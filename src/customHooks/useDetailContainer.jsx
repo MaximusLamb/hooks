@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { getOneCharacter } from '../services/getOneCharacter';
 import { useParams } from 'react-router-dom';
 
-
 export const useDetailConainer = () => {
   const { id } = useParams();
   const [name, setName] = useState([]);
